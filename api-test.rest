@@ -1,0 +1,40 @@
+### Health Check
+GET http://localhost:3000/api/health
+
+### Register User
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "VS Code User",
+  "email": "vscode@example.com",
+  "password": "password123"
+}
+
+### Login User
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "vscode@example.com",
+  "password": "password123"
+}
+
+### Create Todo - MANUAL TOKEN (Replace YOUR_TOKEN_HERE)
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "title": "Test from VS Code",
+  "description": "This todo was created from VS Code REST Client",
+  "priority": "high"
+}
+
+### Get All Todos - MANUAL TOKEN
+GET http://localhost:3000/api/todos
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Get Todos with Pagination
+GET http://localhost:3000/api/todos?page=1&limit=5
+Authorization: Bearer YOUR_TOKEN_HERE
